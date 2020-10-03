@@ -26,6 +26,7 @@ public class SpawnManager : MonoBehaviour
     private void BuildWave()
     {
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(0f, new Wave.Spawn(5, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(1f, new Wave.Spawn(10, 0)));
     }
     private int waveIndex = 0;
 
@@ -70,8 +71,8 @@ public class SpawnManager : MonoBehaviour
                 if (currentTimer >= tuple.Item1)
                 {
                     Spawn(monsterPrefabs[tuple.Item2.prefabID], tuple.Item2.number);
+                    waveIndex++;
                 }
-                waveIndex++;
             }
         }
     }
