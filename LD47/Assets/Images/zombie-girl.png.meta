@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 46b431014dc94194d9be7be3053c062b
+guid: 206df3ba5e96d054fb937f026224668e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8699767240799345378
-    second: gatling_0
+      213: -8005455774630569639
+    second: zombie-girl_0
   - first:
-      213: 410589218447804073
-    second: gatling_1
+      213: -8601282488096905154
+    second: zombie-girl_1
+  - first:
+      213: -2381278108767394251
+    second: zombie-girl_2
+  - first:
+      213: -9048373316516553153
+    second: zombie-girl_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -95,13 +101,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gatling_0
+      name: zombie-girl_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 54.5
-        height: 18
+        width: 30.5
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -109,20 +115,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e15239fa9c7344780800000000000000
-      internalID: -8699767240799345378
+      spriteID: 9599b004368e6e090800000000000000
+      internalID: -8005455774630569639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gatling_1
+      name: zombie-girl_1
       rect:
         serializedVersion: 2
-        x: 54
+        x: 30
         y: 0
-        width: 54.5
-        height: 18
+        width: 30.5
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,8 +136,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a6cf2208b4b2b500800000000000000
-      internalID: 410589218447804073
+      spriteID: e38223c062b12a880800000000000000
+      internalID: -8601282488096905154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie-girl_2
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 30.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53661873d2004fed0800000000000000
+      internalID: -2381278108767394251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie-girl_3
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 30.5
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e58e1b868bd6280800000000000000
+      internalID: -9048373316516553153
       vertices: []
       indices: 
       edges: []
@@ -139,7 +187,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 333820fdf76792c459ae1f088a7ec344
+    spriteID: 049e2e21f383a14458b5f63a78e6bb8e
     internalID: 0
     vertices: []
     indices: 
