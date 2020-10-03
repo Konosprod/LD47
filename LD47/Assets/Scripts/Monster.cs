@@ -35,4 +35,10 @@ public class Monster : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log($"{other.name} has collided with me");
+    }
 }
