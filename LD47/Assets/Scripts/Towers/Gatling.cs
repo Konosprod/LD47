@@ -15,11 +15,11 @@ public class Gatling : Tower
         {
             // Deal damage to the monster
             rayHit.collider.gameObject.GetComponent<Monster>().TakeDamage(damage);
-
-            // Visual effects
-            gunshellParticleSystem.Emit(1);
-            muzzleflashParticleSystem.Emit(30);
-            shotParticleSystem.Emit(1);
         }
+
+        // Visual effects
+        gunshellParticleSystem.Emit(1);
+        muzzleflashParticleSystem.Emit(30);
+        shotParticleSystem.Emit(1);
     }
 }
