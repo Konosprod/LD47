@@ -18,7 +18,7 @@ public class GoalDetection : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.name);
+        Debug.Log($"{other.name} has reached the goal ! Time to loop.");
         GameManager._instance.LoseLoop();
     }
 
