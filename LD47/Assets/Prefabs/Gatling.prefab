@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 50
   damage: 5
-  fireDelay: 0.125
+  fireDelay: 0.16
   prefab: {fileID: 0}
   currentDelay: 0
   layerMask: 0
