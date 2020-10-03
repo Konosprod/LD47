@@ -767,6 +767,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168734339}
   m_CullTransparentMesh: 0
+--- !u!198 &1293479870 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5022275648565204837, guid: 6f546e9507fc2c143a91a2a6cdf4dc9a, type: 3}
+  m_PrefabInstance: {fileID: 2417854374661078907}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1299840384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,6 +1385,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gatling
       objectReference: {fileID: 0}
+    - target: {fileID: 2417854374099092973, guid: 6f546e9507fc2c143a91a2a6cdf4dc9a, type: 3}
+      propertyPath: muzzleflashParticleSystem
+      value: 
+      objectReference: {fileID: 1293479870}
     - target: {fileID: 2417854374099092974, guid: 6f546e9507fc2c143a91a2a6cdf4dc9a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.03
@@ -1455,6 +1464,30 @@ PrefabInstance:
     - target: {fileID: 2417854374705582703, guid: 6f546e9507fc2c143a91a2a6cdf4dc9a, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022275648565204837, guid: 6f546e9507fc2c143a91a2a6cdf4dc9a, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022275648565204837, guid: 6f546e9507fc2c143a91a2a6cdf4dc9a, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022275648565204837, guid: 6f546e9507fc2c143a91a2a6cdf4dc9a, type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022275648565204837, guid: 6f546e9507fc2c143a91a2a6cdf4dc9a, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022275648565204837, guid: 6f546e9507fc2c143a91a2a6cdf4dc9a, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022275648565204837, guid: 6f546e9507fc2c143a91a2a6cdf4dc9a, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f546e9507fc2c143a91a2a6cdf4dc9a, type: 3}

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Gatling : Tower
 {
     public ParticleSystem gunshellParticleSystem;
+    public ParticleSystem muzzleflashParticleSystem;
 
     public override void Fire()
     {
@@ -13,6 +14,7 @@ public class Gatling : Tower
         {
             rayHit.collider.gameObject.GetComponent<Monster>().TakeDamage(damage);
             gunshellParticleSystem.Emit(1);
+            muzzleflashParticleSystem.Emit(30);
         }
     }
 }
