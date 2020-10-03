@@ -1,7 +1,43 @@
 fileFormatVersion: 2
 guid: 5254d5cbf0dd656459791096830f4703
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5378451046449890740
+    second: big-boy_0
+  - first:
+      213: -6591840606518198451
+    second: big-boy_1
+  - first:
+      213: 6118984003714940283
+    second: big-boy_2
+  - first:
+      213: -2801037109958548478
+    second: big-boy_3
+  - first:
+      213: -6123316656063112578
+    second: big-boy_4
+  - first:
+      213: -250666075816562266
+    second: big-boy_5
+  - first:
+      213: 1641517098019738072
+    second: big-boy_6
+  - first:
+      213: 8652871144371733377
+    second: big-boy_7
+  - first:
+      213: -3481311562550744372
+    second: big-boy_8
+  - first:
+      213: 4380480201285138308
+    second: big-boy_9
+  - first:
+      213: -7403111912424217925
+    second: big-boy_10
+  - first:
+      213: -4006182522058621206
+    second: big-boy_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +77,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -87,7 +123,259 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: big-boy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 99.166664
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b549710bb814aa40800000000000000
+      internalID: 5378451046449890740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-boy_1
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 0
+        width: 99.166664
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4fbc78b4e31584a0800000000000000
+      internalID: -6591840606518198451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-boy_2
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 0
+        width: 99.166664
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7df9b7188ffae450800000000000000
+      internalID: 6118984003714940283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-boy_3
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 0
+        width: 99.166664
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 204eb3ac697b029d0800000000000000
+      internalID: -2801037109958548478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-boy_4
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 0
+        width: 99.166664
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7a102ca1fb950ba0800000000000000
+      internalID: -6123316656063112578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-boy_5
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 0
+        width: 99.166664
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a176b93884758cf0800000000000000
+      internalID: -250666075816562266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-boy_6
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 0
+        width: 99.166664
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d152308a17d7c610800000000000000
+      internalID: 1641517098019738072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-boy_7
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 0
+        width: 99.166664
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 183418ff57c251870800000000000000
+      internalID: 8652871144371733377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-boy_8
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 0
+        width: 99.166664
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccae3b12495efafc0800000000000000
+      internalID: -3481311562550744372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-boy_9
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 0
+        width: 99.166664
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4877b37c8879acc30800000000000000
+      internalID: 4380480201285138308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-boy_10
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 0
+        width: 99.166664
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb2ed7360fcd24990800000000000000
+      internalID: -7403111912424217925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: big-boy_11
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 0
+        width: 99.166664
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee315bc83e2768c0800000000000000
+      internalID: -4006182522058621206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
