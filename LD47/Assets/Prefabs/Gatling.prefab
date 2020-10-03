@@ -152,7 +152,7 @@ MonoBehaviour:
   cost: 50
   damage: 5
   fireDelay: 0.16
-  prefab: {fileID: 0}
+  prefab: {fileID: 2417854374099092969}
   currentDelay: 0
   layerMask: 0
   gunshellParticleSystem: {fileID: 2417854374705582703}

@@ -98,6 +98,7 @@ public class GameManager : MonoBehaviour
         if(CanAfford(money))
         {
             currentGold -= money;
+            UpdateGoldText();
         }
     }
 }

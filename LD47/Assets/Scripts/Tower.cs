@@ -9,9 +9,6 @@ public abstract class Tower : MonoBehaviour
     public float fireDelay;
 
     [HideInInspector]
-    public GameObject prefab;
-
-    [HideInInspector]
     public float currentDelay;
 
     [HideInInspector]
@@ -23,8 +20,6 @@ public abstract class Tower : MonoBehaviour
     {
         currentDelay = fireDelay;
         layerMask = LayerMask.GetMask("Zombie");
-
-        prefab = gameObject;
     }
 
     // Update is called once per frame
