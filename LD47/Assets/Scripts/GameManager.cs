@@ -86,4 +86,18 @@ public class GameManager : MonoBehaviour
         float milliseconds = (currentTimer % 1) * 1000;
         timerText.text = string.Format("{0:00}:{1:000}", seconds, milliseconds);
     }
+
+
+    public bool CanAfford(int cost)
+    {
+        return currentGold >= cost;
+    }
+
+    public void Spend(int money)
+    {
+        if(CanAfford(money))
+        {
+            currentGold -= money;
+        }
+    }
 }
