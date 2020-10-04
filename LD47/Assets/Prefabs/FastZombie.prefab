@@ -167,7 +167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 25
   speed: 8
-  goldReward: 15
+  goldReward: 5
+  isSlowed: 0
 --- !u!114 &7471735430007348561
 MonoBehaviour:
   m_ObjectHideFlags: 0

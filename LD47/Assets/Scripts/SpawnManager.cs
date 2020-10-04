@@ -34,6 +34,19 @@ public class SpawnManager : MonoBehaviour
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(3f, new Wave.Spawn(25, 1)));
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(3f, new Wave.Spawn(40, 0)));
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(4f, new Wave.Spawn(4, 2)));
+
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(6f, new Wave.Spawn(30, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(7f, new Wave.Spawn(30, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(8f, new Wave.Spawn(30, 0)));
+
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(10.5f, new Wave.Spawn(30, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(10.5f, new Wave.Spawn(30, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(11f, new Wave.Spawn(5, 2)));
+
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(14f, new Wave.Spawn(50, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(14.5f, new Wave.Spawn(50, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(15f, new Wave.Spawn(75, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(15f, new Wave.Spawn(10, 2)));
     }
     private int waveIndex = 0;
 
@@ -59,9 +72,9 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] monsterPrefabs = new GameObject[3];
     /* Monster balance
      * ID |   Sprite    | MaxHP | Speed | Gold reward | Note
-     * 0    Zombie-girl    50       3        10 
-     * 1    Fast-girl      25       8        15
-     * 2    Big-boy       1500      2.2      250        Speed is special due to animation
+     * 0    Zombie-girl   100       3        10 
+     * 1    Fast-girl      25       8        5
+     * 2    Big-boy       1500      2.2      100        Speed is special due to animation
      */
 
     private float currentTimer = 0f;
@@ -96,8 +109,19 @@ public class SpawnManager : MonoBehaviour
         {
             Vector3 spawnPosition = new Vector3(transform.position.x + UnityEngine.Random.Range(-0.5f, 0.5f), prefab.transform.position.y + transform.position.y);
             GameObject newMob = GameObject.Instantiate(prefab, spawnPosition, prefab.transform.rotation, monstersParent);
+            newMob.transform.localScale = new Vector3(UnityEngine.Random.Range(0.8f, 1.2f), UnityEngine.Random.Range(0.8f, 1.2f));
             Monster monster = newMob.GetComponent<Monster>();
             monster.speed *= UnityEngine.Random.Range(0.9f, 1.1f);
+
+            // Scaling stats with time
+            float scaling = 1f + Mathf.Sqrt(currentTimer);
+            monster.speed *= Mathf.Sqrt(scaling);
+            monster.maxHP *= scaling;
+            if(currentTimer > 15f)
+            {
+                monster.maxHP += 50f * scaling;
+            }
+
             ZombieBehaviour zombie = newMob.GetComponent<ZombieBehaviour>();
             zombie.monsterInfo = monster;
 

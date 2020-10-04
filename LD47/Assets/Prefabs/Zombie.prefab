@@ -171,9 +171,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e3212d13cf25e045b430ae4d679827c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 50
+  maxHP: 100
   speed: 3
   goldReward: 10
+  isSlowed: 0
 --- !u!95 &-1291629113650506541
 Animator:
   serializedVersion: 3

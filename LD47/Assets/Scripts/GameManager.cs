@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     public Text goldText;
     public Text timerText;
+    public Text loopText;
 
     private int totalGold = 50;
     private int currentGold;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     private float initialTimer = 60f;
     private float currentTimer;
 
+    private int loopNumber = 0;
     public bool waveInProgress = true;
 
     void Awake()
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
         UpdateGoldText();
         currentTimer = initialTimer;
         UpdateTimerText();
+        UpdateLoopText();
     }
 
     // Update is called once per frame
@@ -65,6 +68,9 @@ public class GameManager : MonoBehaviour
         currentGold = totalGold;
         UpdateGoldText();
         currentTimer = initialTimer;
+
+        loopNumber++;
+        UpdateLoopText();
     }
 
 
@@ -85,6 +91,11 @@ public class GameManager : MonoBehaviour
         float seconds = Mathf.FloorToInt(currentTimer % 60);
         float milliseconds = (currentTimer % 1) * 1000;
         timerText.text = string.Format("{0:00}:{1:000}", seconds, milliseconds);
+    }
+
+    public void UpdateLoopText()
+    {
+        loopText.text = $"Loop n°{loopNumber}";
     }
 
 
