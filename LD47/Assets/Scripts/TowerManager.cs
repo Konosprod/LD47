@@ -92,12 +92,15 @@ public class TowerManager : MonoBehaviour
 
         // Disable animations and shooting
         preview.GetComponent<Tower>().enabled = false;
-        preview.GetComponent<Collider2D>().enabled = false;
+
+        Collider2D collider = preview.GetComponent<Collider2D>();
+        if (collider != null)
+            collider.enabled = false;
+
         Animator animator = preview.GetComponentInChildren<Animator>();
         if (animator != null)
-        {
             animator.enabled = false;
-        }
+
 
         // Remove previous preview tower
         Destroy(previewTower);
