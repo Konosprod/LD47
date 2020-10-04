@@ -26,7 +26,9 @@ public class SpawnManager : MonoBehaviour
     private void BuildWave()
     {
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(0f, new Wave.Spawn(5, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(0.5f, new Wave.Spawn(20, 1)));
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(1f, new Wave.Spawn(10, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(1f, new Wave.Spawn(1, 2)));
     }
     private int waveIndex = 0;
 
@@ -50,6 +52,12 @@ public class SpawnManager : MonoBehaviour
     private GameManager gameManager;
 
     public GameObject[] monsterPrefabs = new GameObject[3];
+    /* Monster balance
+     * ID |   Sprite    | MaxHP | Speed | Gold reward | Note
+     * 0    Zombie-girl    50       3        10 
+     * 1    Fast-girl      20       8        12
+     * 2    Big-boy       1500      2.2      250        Speed is special due to animation
+     */
 
     private float currentTimer = 0f;
 
@@ -81,8 +89,20 @@ public class SpawnManager : MonoBehaviour
     {
         for (int i = 0; i < number; i++)
         {
-            Vector3 spawnPosition = new Vector3(transform.position.x + UnityEngine.Random.Range(-0.5f, 0.5f), transform.position.y);
+            Vector3 spawnPosition = new Vector3(transform.position.x + UnityEngine.Random.Range(-0.5f, 0.5f), prefab.transform.position.y);
             GameObject newMob = GameObject.Instantiate(prefab, spawnPosition, prefab.transform.rotation, monstersParent);
+            Monster monster = newMob.GetComponent<Monster>();
+            monster.speed *= UnityEngine.Random.Range(0.9f, 1.1f);
+            ZombieBehaviour zombie = newMob.GetComponent<ZombieBehaviour>();
+            zombie.monsterInfo = monster;
+
+            if(zombie.hasSpriteVariation)
+            {
+                int rand = UnityEngine.Random.Range(0, zombie.sprites.Length);
+                zombie.spriteRenderer.sprite = zombie.sprites[rand];
+                zombie.animator.runtimeAnimatorController = zombie.animatorControllers[rand];
+            }
+
             monstersList.Add(newMob);
         }
     }
