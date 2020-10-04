@@ -26,9 +26,14 @@ public class SpawnManager : MonoBehaviour
     private void BuildWave()
     {
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(0f, new Wave.Spawn(5, 0)));
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(0.5f, new Wave.Spawn(20, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(0.5f, new Wave.Spawn(10, 1)));
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(1f, new Wave.Spawn(10, 0)));
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(1f, new Wave.Spawn(1, 2)));
+
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(2f, new Wave.Spawn(25, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(3f, new Wave.Spawn(25, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(3f, new Wave.Spawn(40, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(4f, new Wave.Spawn(4, 2)));
     }
     private int waveIndex = 0;
 

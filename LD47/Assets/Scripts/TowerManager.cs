@@ -15,6 +15,7 @@ public class TowerManager : MonoBehaviour
     public Text gatlingButtonText;  // towers[0]
     public Text mortarButtonText;  // towers[1]
     public Text flamethrowerButtonText;  // towers[2]
+    public Text barbedWireButtonText;  // towers[3]
 
     // Preview of the tower that you are trying to build
     private GameObject previewTower;
@@ -28,6 +29,7 @@ public class TowerManager : MonoBehaviour
         SetGatlingButtonText();
         SetMortarButtonText();
         SetFlamethrowerButtonText();
+        SetBarbedWireButtonText();
     }
 
 
@@ -90,6 +92,7 @@ public class TowerManager : MonoBehaviour
 
         // Disable animations and shooting
         preview.GetComponent<Tower>().enabled = false;
+        preview.GetComponent<Collider2D>().enabled = false;
         Animator animator = preview.GetComponentInChildren<Animator>();
         if (animator != null)
         {
@@ -115,5 +118,10 @@ public class TowerManager : MonoBehaviour
     private void SetFlamethrowerButtonText()
     {
         flamethrowerButtonText.text = $"Flamethrower\nCost : {towerPrefabs[2].cost} \nDPS : {towerPrefabs[2].damage}/s";
+    }
+
+    private void SetBarbedWireButtonText()
+    {
+        barbedWireButtonText.text = $"Barbed wire\nCost : {towerPrefabs[3].cost} \nDPS : {towerPrefabs[3].damage}/s\nSlows ennemies by 60%";
     }
 }
