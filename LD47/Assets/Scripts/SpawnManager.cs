@@ -55,7 +55,7 @@ public class SpawnManager : MonoBehaviour
     /* Monster balance
      * ID |   Sprite    | MaxHP | Speed | Gold reward | Note
      * 0    Zombie-girl    50       3        10 
-     * 1    Fast-girl      20       8        12
+     * 1    Fast-girl      25       8        15
      * 2    Big-boy       1500      2.2      250        Speed is special due to animation
      */
 
