@@ -19,7 +19,7 @@ public class MortarShell : MonoBehaviour
     {
         Collider2D[] zombies = Physics2D.OverlapCircleAll(transform.position, explosionRadius, LayerMask.GetMask("Zombie"));
         // Deal the damage
-        if(zombies.Length > 0)
+        if (zombies.Length > 0)
         {
             for (int i = 0; i < zombies.Length; i++)
             {

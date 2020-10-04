@@ -100,7 +100,7 @@ public class TowerManager : MonoBehaviour
     {
         gatlingButtonText.text = $"Gatling gun\nCost : {towerPrefabs[0].cost} \nDamage : {towerPrefabs[0].damage} \nFire rate : {(1 / towerPrefabs[0].fireDelay)}/s";
     }
-    
+
     private void SetMortarButtonText()
     {
         mortarButtonText.text = $"Mortar\nCost : {towerPrefabs[1].cost} \nDamage : {towerPrefabs[1].damage} \nFire rate : {(1 / towerPrefabs[1].fireDelay)}/s";

@@ -26,7 +26,7 @@ public abstract class Tower : MonoBehaviour
     public void Update()
     {
         currentDelay -= Time.deltaTime;
-        if(currentDelay <= 0f)
+        if (currentDelay <= 0f)
         {
             Fire();
             currentDelay = fireDelay;

@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
 
     public void Spend(int money)
     {
-        if(CanAfford(money))
+        if (CanAfford(money))
         {
             currentGold -= money;
             UpdateGoldText();

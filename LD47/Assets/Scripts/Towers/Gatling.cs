@@ -11,7 +11,7 @@ public class Gatling : Tower
     public override void Fire()
     {
         RaycastHit2D rayHit = Physics2D.Raycast(transform.position, Vector2.right, Mathf.Infinity, layerMask);
-        if(rayHit.collider != null)
+        if (rayHit.collider != null)
         {
             // Deal damage to the monster
             rayHit.collider.gameObject.GetComponent<Monster>().TakeDamage(damage);

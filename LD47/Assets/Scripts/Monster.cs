@@ -19,14 +19,14 @@ public class Monster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 
     public void TakeDamage(float damage)
     {
         currentHP -= damage;
-        if(currentHP <= 0f)
+        if (currentHP <= 0f)
         {
             //Debug.Log("RIP : " + gameObject.name);
             currentHP = 0f;

@@ -70,7 +70,7 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameManager.waveInProgress)
+        if (gameManager.waveInProgress)
         {
             currentTimer += Time.deltaTime;
             if (waveIndex < wave.spawnList.Count)
@@ -96,7 +96,7 @@ public class SpawnManager : MonoBehaviour
             ZombieBehaviour zombie = newMob.GetComponent<ZombieBehaviour>();
             zombie.monsterInfo = monster;
 
-            if(zombie.hasSpriteVariation)
+            if (zombie.hasSpriteVariation)
             {
                 int rand = UnityEngine.Random.Range(0, zombie.sprites.Length);
                 zombie.spriteRenderer.sprite = zombie.sprites[rand];
