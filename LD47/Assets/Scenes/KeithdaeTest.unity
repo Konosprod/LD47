@@ -1098,7 +1098,7 @@ MonoBehaviour:
   monstersParent: {fileID: 2120699619}
   monsterPrefabs:
   - {fileID: 3982462227467787445, guid: f012a62f5210693488960baccd48c1e5, type: 3}
-  - {fileID: 0}
+  - {fileID: 5903585218866702318, guid: 29a6c43874ebd1340b7068ad627e251f, type: 3}
   - {fileID: 2842653377340433888, guid: ac874f480e1ce45469a3f53c075f9455, type: 3}
 --- !u!1 &1693429987
 GameObject:
