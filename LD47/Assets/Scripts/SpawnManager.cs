@@ -89,7 +89,7 @@ public class SpawnManager : MonoBehaviour
     {
         for (int i = 0; i < number; i++)
         {
-            Vector3 spawnPosition = new Vector3(transform.position.x + UnityEngine.Random.Range(-0.5f, 0.5f), prefab.transform.position.y);
+            Vector3 spawnPosition = new Vector3(transform.position.x + UnityEngine.Random.Range(-0.5f, 0.5f), prefab.transform.position.y + transform.position.y);
             GameObject newMob = GameObject.Instantiate(prefab, spawnPosition, prefab.transform.rotation, monstersParent);
             Monster monster = newMob.GetComponent<Monster>();
             monster.speed *= UnityEngine.Random.Range(0.9f, 1.1f);

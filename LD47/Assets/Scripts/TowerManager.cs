@@ -14,6 +14,7 @@ public class TowerManager : MonoBehaviour
     [Header("UI")]
     public Text gatlingButtonText;  // towers[0]
     public Text mortarButtonText;  // towers[1]
+    public Text flamethrowerButtonText;  // towers[2]
 
     // Preview of the tower that you are trying to build
     private GameObject previewTower;
@@ -26,6 +27,7 @@ public class TowerManager : MonoBehaviour
     {
         SetGatlingButtonText();
         SetMortarButtonText();
+        SetFlamethrowerButtonText();
     }
 
 
@@ -88,7 +90,11 @@ public class TowerManager : MonoBehaviour
 
         // Disable animations and shooting
         preview.GetComponent<Tower>().enabled = false;
-        preview.GetComponentInChildren<Animator>().enabled = false;
+        Animator animator = preview.GetComponentInChildren<Animator>();
+        if (animator != null)
+        {
+            animator.enabled = false;
+        }
 
         // Remove previous preview tower
         Destroy(previewTower);
@@ -104,5 +110,10 @@ public class TowerManager : MonoBehaviour
     private void SetMortarButtonText()
     {
         mortarButtonText.text = $"Mortar\nCost : {towerPrefabs[1].cost} \nDamage : {towerPrefabs[1].damage} \nFire rate : {(1 / towerPrefabs[1].fireDelay)}/s";
+    }
+
+    private void SetFlamethrowerButtonText()
+    {
+        flamethrowerButtonText.text = $"Flamethrower\nCost : {towerPrefabs[2].cost} \nDPS : {towerPrefabs[2].damage}/s";
     }
 }
