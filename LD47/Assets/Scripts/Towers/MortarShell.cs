@@ -32,6 +32,7 @@ public class MortarShell : MonoBehaviour
         // Destroy after a delay to let the particles do their job
         explosionParticleSystem.gameObject.SetActive(true);
         rigidbody2D.velocity = Vector2.zero;
+        rigidbody2D.angularVelocity = 0f;
         rigidbody2D.isKinematic = true;
         spriteRenderer.enabled = false;
         this.enabled = false;
