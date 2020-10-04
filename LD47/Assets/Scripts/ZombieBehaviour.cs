@@ -35,7 +35,7 @@ public class ZombieBehaviour : MonoBehaviour
     {
         if (!isBigBoy || IsJumping(spriteRenderer.sprite.name))
         {
-            transform.position -= new Vector3(monsterInfo.speed, 0f, 0f) * Time.deltaTime;
+            transform.position -= new Vector3(monsterInfo.speed * (monsterInfo.isSlowed > 0 ? 0.4f : 1f), 0f, 0f) * Time.deltaTime;
         }
     }
 
