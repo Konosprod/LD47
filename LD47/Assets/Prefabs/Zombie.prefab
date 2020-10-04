@@ -125,6 +125,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d3e7db9fb8e76488bc49b3a8e3a3e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasSpriteVariation: 1
+  sprites:
+  - {fileID: -8601282488096905154, guid: 206df3ba5e96d054fb937f026224668e, type: 3}
+  - {fileID: 7952618665807134415, guid: b5ee11b869a1837438475db6f6a21b95, type: 3}
+  - {fileID: 2393675969718380754, guid: b8910318ee2bd4f428bd2929ef1b4270, type: 3}
+  animatorControllers:
+  - {fileID: 9100000, guid: b01794f759c969a4294e13848744cea9, type: 2}
+  - {fileID: 9100000, guid: 34bffbeb456814d4ba738049c81421d1, type: 2}
+  - {fileID: 9100000, guid: 925eef7e23d84c446bd2803ac2c4e79e, type: 2}
+  isBigBoy: 0
+  monsterInfo: {fileID: 0}
+  spriteRenderer: {fileID: 3982462227467787443}
+  animator: {fileID: -1291629113650506541}
 --- !u!50 &3982462227467787440
 Rigidbody2D:
   serializedVersion: 4
@@ -159,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 50
-  speed: 2
+  speed: 3
   goldReward: 10
 --- !u!95 &-1291629113650506541
 Animator:
