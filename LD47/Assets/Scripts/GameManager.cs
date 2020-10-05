@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
                 currentTimer = 0f;
                 UpdateTimerText();
                 AudioManager.instance.PlayEndGame(endGame);
+                TowerManager._instance.StopAllTowers();
                 //Debug.Log("GG WELL PLAYED");
             }
             else

@@ -160,6 +160,14 @@ public class TowerManager : MonoBehaviour
         }
     }
 
+    public void StopAllTowers()
+    {
+        foreach (Tower tower in towers)
+        {
+            tower.enabled = false;
+        }
+    }
+
     public void UpdateFlamethrowerRange()
     {
         foreach (Tower tower in towers)
