@@ -24,7 +24,7 @@ public class Gatling : Tower
                 damageTotal *= 2f;
             
 
-            Debug.Log($"Level of crit : {UpgradeManager._instance.gatlingCriticalUpgradeLevel} / Crit rate : {UpgradeManager._instance.gatlingCriticalUpgradeLevel * UpgradeManager._instance.gatlingCriticalUpgrade} / HasCrit : {crit}");
+            //Debug.Log($"Level of crit : {UpgradeManager._instance.gatlingCriticalUpgradeLevel} / Crit rate : {UpgradeManager._instance.gatlingCriticalUpgradeLevel * UpgradeManager._instance.gatlingCriticalUpgrade} / HasCrit : {crit}");
 
             rayHit.collider.gameObject.GetComponent<Monster>().TakeDamage(damageTotal);
         }
