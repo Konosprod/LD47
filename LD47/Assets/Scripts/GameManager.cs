@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdateGoldText()
     {
-        goldText.text = $"Gold : {currentGold}";
+        goldText.text = $"Money : {currentGold}$";
     }
 
     public void UpdateTimerText()
