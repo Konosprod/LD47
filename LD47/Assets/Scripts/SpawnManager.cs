@@ -53,7 +53,8 @@ public class SpawnManager : MonoBehaviour
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(20f, new Wave.Spawn(50, 1)));
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(21f, new Wave.Spawn(100, 0)));
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(22f, new Wave.Spawn(50, 1)));
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(23f, new Wave.Spawn(150, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(23f, new Wave.Spawn(80, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(24f, new Wave.Spawn(80, 0)));
 
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(25f, new Wave.Spawn(20, 2)));
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(26f, new Wave.Spawn(80, 1)));
@@ -64,24 +65,40 @@ public class SpawnManager : MonoBehaviour
 
 
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(34f, new Wave.Spawn(60, 1)));
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(35f, new Wave.Spawn(120, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(35f, new Wave.Spawn(60, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(35.5f, new Wave.Spawn(60, 0)));
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(36f, new Wave.Spawn(60, 1)));
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(37f, new Wave.Spawn(120, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(37f, new Wave.Spawn(60, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(37.5f, new Wave.Spawn(60, 0)));
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(38f, new Wave.Spawn(60, 1)));
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(39f, new Wave.Spawn(175, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(39f, new Wave.Spawn(90, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(39.5f, new Wave.Spawn(90, 0)));
 
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(41f, new Wave.Spawn(30, 2)));
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(42f, new Wave.Spawn(100, 1)));
 
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(46f, new Wave.Spawn(50, 2)));
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(46f, new Wave.Spawn(150, 1)));
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(46f, new Wave.Spawn(250, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(45f, new Wave.Spawn(25, 2)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(46f, new Wave.Spawn(25, 2)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(46f, new Wave.Spawn(80, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(46.3f, new Wave.Spawn(80, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(46.5f, new Wave.Spawn(90, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(46.9f, new Wave.Spawn(80, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(47.4f, new Wave.Spawn(90, 0)));
 
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(50f, new Wave.Spawn(250, 0)));
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(52f, new Wave.Spawn(250, 0)));
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(54f, new Wave.Spawn(250, 1)));
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(56f, new Wave.Spawn(250, 0)));
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(58f, new Wave.Spawn(250, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(50f, new Wave.Spawn(90, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(50.7f, new Wave.Spawn(90, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(51.4f, new Wave.Spawn(90, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(52f, new Wave.Spawn(100, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(52.7f, new Wave.Spawn(100, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(53.4f, new Wave.Spawn(100, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(54f, new Wave.Spawn(100, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(54.7f, new Wave.Spawn(100, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(55f, new Wave.Spawn(40, 2)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(55.4f, new Wave.Spawn(100, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(56f, new Wave.Spawn(125, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(56.5f, new Wave.Spawn(125, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(57.5f, new Wave.Spawn(125, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(58f, new Wave.Spawn(125, 1)));
     }
     private int waveIndex = 0;
 

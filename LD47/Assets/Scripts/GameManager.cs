@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
             {
                 // Win
                 currentTimer = 0f;
+                //Debug.Log("GG WELL PLAYED");
             }
             else
                 UpdateTimerText();
