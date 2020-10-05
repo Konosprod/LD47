@@ -21,7 +21,8 @@ public class GameManager : MonoBehaviour
     public AudioClip loop;
     public AudioClip rewind;
 
-    private int totalGold = 9999;
+
+    private int totalGold = 100;
     private int currentGold;
 
     private float initialTimer = 60f;
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
             {
                 // Win
                 currentTimer = 0f;
+                //Debug.Log("GG WELL PLAYED");
             }
             else
                 UpdateTimerText();
@@ -105,7 +107,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdateGoldText()
     {
-        goldText.text = $"Gold : {currentGold}";
+        goldText.text = $"Money : {currentGold}$";
     }
 
     public void UpdateTimerText()

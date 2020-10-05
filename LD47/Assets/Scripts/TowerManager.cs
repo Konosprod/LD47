@@ -20,12 +20,18 @@ public class TowerManager : MonoBehaviour
     public Tower[] towerPrefabs = new Tower[5];
     public Transform towersParent;
     public GameObject tooPoor;
+    public GameObject okRich;
 
     [Header("UI")]
     public Text gatlingButtonText;  // towerPrefabs[0]
     public Text mortarButtonText;  // towerPrefabs[1]
     public Text flamethrowerButtonText;  // towerPrefabs[2]
     public Text barbedWireButtonText;  // towerPrefabs[3]
+
+    public Text gatlingCostPreviewText;
+    public Text mortarCostPreviewText;
+    public Text flamethrowerCostPreviewText;
+    public Text barbedWireCostPreviewText;
 
     [Header("Audio")]
     public AudioClip build;
@@ -66,9 +72,11 @@ public class TowerManager : MonoBehaviour
 
             // Move the preview to the correct position
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            previewTower.transform.position = new Vector3(mousePos.x, previewTower.transform.position.y, -1f);
+            previewTower.transform.position = new Vector3(mousePos.x, previewTower.transform.position.y, -2f);
             tooPoor.SetActive(!GameManager._instance.CanAfford(Mathf.FloorToInt(towerPrefabs[selectedTowerType].cost * Mathf.Pow(1.5f, towersBought[selectedTowerType]))));
-            tooPoor.transform.position = new Vector3(mousePos.x, previewTower.transform.position.y, -2f);
+            tooPoor.transform.position = new Vector3(mousePos.x, previewTower.transform.position.y, -3f);
+            okRich.SetActive(GameManager._instance.CanAfford(Mathf.FloorToInt(towerPrefabs[selectedTowerType].cost * Mathf.Pow(1.5f, towersBought[selectedTowerType]))));
+            okRich.transform.position = new Vector3(mousePos.x, previewTower.transform.position.y, -3f);
 
 
             // Right-click with selected tower to remove the selection
@@ -77,6 +85,9 @@ public class TowerManager : MonoBehaviour
                 RemoveSelectedTower();
             }
         }
+
+
+        UpdateTowersButtonText();
     }
 
 
@@ -174,20 +185,28 @@ public class TowerManager : MonoBehaviour
     private void SetGatlingButtonText()
     {
         gatlingButtonText.text = $"Gatling gun\n\nCost \n{Mathf.FloorToInt(towerPrefabs[0].cost * Mathf.Pow(1.5f, towersBought[0]))} \nDamage \n<color=#DC143C>{towerPrefabs[0].damage * (1 + (UpgradeManager._instance.damageUpgradeLevel * UpgradeManager._instance.damageUpgrade))}</color> \nFire rate \n <color=#ADD8E6>{(1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade)) / towerPrefabs[0].fireDelay}/s</color>";
+        gatlingCostPreviewText.text = $"{Mathf.FloorToInt(towerPrefabs[0].cost * Mathf.Pow(1.5f, towersBought[0]))}$";
+        gatlingCostPreviewText.color = GameManager._instance.CanAfford(Mathf.FloorToInt(towerPrefabs[0].cost * Mathf.Pow(1.5f, towersBought[0]))) ? Color.white : Color.red;
     }
 
     private void SetMortarButtonText()
     {
         mortarButtonText.text = $"Mortar\n\nCost \n {Mathf.FloorToInt(towerPrefabs[1].cost * Mathf.Pow(1.5f, towersBought[1]))} \nDamage \n <color=#DC143C>{towerPrefabs[1].damage * (1 + (UpgradeManager._instance.damageUpgradeLevel * UpgradeManager._instance.damageUpgrade))}</color> \nFire rate \n <color=#ADD8E6>{(1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade)) / towerPrefabs[1].fireDelay}/s</color>";
+        mortarCostPreviewText.text = $"{Mathf.FloorToInt(towerPrefabs[1].cost * Mathf.Pow(1.5f, towersBought[1]))}$";
+        mortarCostPreviewText.color = GameManager._instance.CanAfford(Mathf.FloorToInt(towerPrefabs[1].cost * Mathf.Pow(1.5f, towersBought[1]))) ? Color.white : Color.red;
     }
 
     private void SetFlamethrowerButtonText()
     {
         flamethrowerButtonText.text = $"Flamethrower\n\nCost \n {Mathf.FloorToInt(towerPrefabs[2].cost * Mathf.Pow(1.5f, towersBought[2]))} \nDPS \n <color=#DC143C>{towerPrefabs[2].damage * (1 + (UpgradeManager._instance.damageUpgradeLevel * UpgradeManager._instance.damageUpgrade)) * (1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade))}/s</color>";
+        flamethrowerCostPreviewText.text = $"{Mathf.FloorToInt(towerPrefabs[2].cost * Mathf.Pow(1.5f, towersBought[2]))}$";
+        flamethrowerCostPreviewText.color = GameManager._instance.CanAfford(Mathf.FloorToInt(towerPrefabs[2].cost * Mathf.Pow(1.5f, towersBought[2]))) ? Color.white : Color.red;
     }
 
     private void SetBarbedWireButtonText()
     {
         barbedWireButtonText.text = $"Barbed wire\n\nCost \n {Mathf.FloorToInt(towerPrefabs[3].cost * Mathf.Pow(1.5f, towersBought[3]))} \nDPS \n <color=#DC143C>{towerPrefabs[3].damage * (1 + (UpgradeManager._instance.damageUpgradeLevel * UpgradeManager._instance.damageUpgrade)) * (1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade))}/s</color>\nSlows ennemies by <color=#ADD8E6>60%</color>";
+        barbedWireCostPreviewText.text = $"{Mathf.FloorToInt(towerPrefabs[3].cost * Mathf.Pow(1.5f, towersBought[3]))}$";
+        barbedWireCostPreviewText.color = GameManager._instance.CanAfford(Mathf.FloorToInt(towerPrefabs[3].cost * Mathf.Pow(1.5f, towersBought[3]))) ? Color.white : Color.red;
     }
 }
