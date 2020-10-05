@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -34,6 +35,9 @@ public class AudioManager : MonoBehaviour
     public AudioSource sfxSource;
     public AudioMixerGroup bgmgroup;
     public AudioMixerGroup sfxgroup;
+
+    public Slider sliderSfx;
+    public Slider sliderBgm;
 
     // Start is called before the first frame update
     void Awake()
@@ -102,6 +106,12 @@ public class AudioManager : MonoBehaviour
     public void PlaySfx(AudioClip sfxClip, float volume)
     {
         sfxSource.PlayOneShot(sfxClip, volume);
+    }
+
+    public void SetVolume()
+    {
+        SetMusicVolume(sliderBgm.value);
+        SetSfxVolume(sliderSfx.value);
     }
 
     public void SetMusicVolume(float volume)
