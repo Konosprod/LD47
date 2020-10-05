@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
             if (currentTimer <= 0f)
             {
                 // Win
-
+                currentTimer = 0f;
             }
             else
                 UpdateTimerText();

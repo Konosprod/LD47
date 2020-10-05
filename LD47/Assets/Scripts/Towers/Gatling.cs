@@ -14,17 +14,17 @@ public class Gatling : Tower
     public override void Fire()
     {
         AudioManager.instance.PlayGatlingSound(fire);
-        bool crit = false;
+        bool crit = UnityEngine.Random.Range(0f, 1f) < UpgradeManager._instance.gatlingCriticalUpgradeLevel * UpgradeManager._instance.gatlingCriticalUpgrade;
         RaycastHit2D rayHit = Physics2D.Raycast(transform.position, Vector2.right, Mathf.Infinity, layerMask);
         if (rayHit.collider != null)
         {
             // Deal damage to the monster
             float damageTotal = damage * (1 + (UpgradeManager._instance.damageUpgradeLevel * UpgradeManager._instance.damageUpgrade));
-            if (UnityEngine.Random.Range(0f, 1f) < UpgradeManager._instance.gatlingCriticalUpgradeLevel * UpgradeManager._instance.gatlingCriticalUpgrade)
-            {
+            if (crit)
                 damageTotal *= 2f;
-                crit = true;
-            }
+            
+
+            Debug.Log($"Level of crit : {UpgradeManager._instance.gatlingCriticalUpgradeLevel} / Crit rate : {UpgradeManager._instance.gatlingCriticalUpgradeLevel * UpgradeManager._instance.gatlingCriticalUpgrade} / HasCrit : {crit}");
 
             rayHit.collider.gameObject.GetComponent<Monster>().TakeDamage(damageTotal);
         }

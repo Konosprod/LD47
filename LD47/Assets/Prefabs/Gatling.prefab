@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 50
-  damage: 7
+  damage: 15
   fireDelay: 0.16
   animator: {fileID: 1018817108}
   currentDelay: 0
