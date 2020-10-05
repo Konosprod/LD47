@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public AudioClip intro;
     public AudioClip loop;
     public AudioClip rewind;
+    public AudioClip endGame;
 
 
     private int totalGold = 100;
@@ -61,6 +62,7 @@ public class GameManager : MonoBehaviour
             {
                 // Win
                 currentTimer = 0f;
+                AudioManager.instance.PlayEndGame(endGame);
                 //Debug.Log("GG WELL PLAYED");
             }
             else

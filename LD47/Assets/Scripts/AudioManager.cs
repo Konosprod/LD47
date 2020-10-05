@@ -100,6 +100,17 @@ public class AudioManager : MonoBehaviour
     }
 
 
+    public void PlayEndGame(AudioClip clip)
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            sfxSources[i].Stop();
+            introSource.clip = clip;
+            loopSource.Stop();
+            introSource.Play();
+        }
+    }
+
     public void PlayLevelMusic(AudioClip introduced, AudioClip loop)
     {
 
