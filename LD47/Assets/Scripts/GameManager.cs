@@ -102,6 +102,11 @@ public class GameManager : MonoBehaviour
         UpdateLoopText();
     }
 
+    public void StartTheGame()
+    {
+        waveInProgress = true;
+    }
+
     public IEnumerator glitchScreen(float time)
     {
         AudioManager.instance.PlaySfx(rewind, 3, true);
