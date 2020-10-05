@@ -54,7 +54,7 @@ public class TowerManager : MonoBehaviour
                 if (!EventSystem.current.IsPointerOverGameObject())
                 {
                     // Buy the tower if the player can afford it
-                    if (GameManager._instance.CanAfford(towerPrefabs[selectedTowerType].cost))
+                    if (GameManager._instance.CanAfford(Mathf.FloorToInt(towerPrefabs[selectedTowerType].cost * Mathf.Pow(1.5f, towersBought[selectedTowerType]))))
                     {
                         BuySelectedTower();
                     }
@@ -82,8 +82,18 @@ public class TowerManager : MonoBehaviour
         GameObject tower = Instantiate(towerPrefabs[selectedTowerType].gameObject, towersParent);
         tower.transform.position = new Vector3(previewTower.transform.position.x, previewTower.transform.position.y, 0f);
         Tower t = tower.GetComponent<Tower>();
-        if(t.animator != null) 
+        if (t.animator != null)
             t.animator.speed = 1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade);
+
+        if (t.GetType().Name == "FlameThrower")
+        {
+            FlameThrower ft = t.GetComponent<FlameThrower>();
+            ft.flameCollider.size = new Vector2(ft.initialSizeX * (1f + (UpgradeManager._instance.flamethrowerRangeUpgradeLevel * UpgradeManager._instance.flamethrowerRangeUpgrade)), ft.flameCollider.size.y);
+            ft.flameCollider.offset = new Vector2(ft.initialOffsetX * (1f + (UpgradeManager._instance.flamethrowerRangeUpgradeLevel * UpgradeManager._instance.flamethrowerRangeUpgrade * 0.75f)), ft.flameCollider.offset.y); // 0.75f otherwise the collider moves away from the flamethrower sprite
+            var fpsm = ft.flameParticleSystem.main;
+            fpsm.startSpeedMultiplier = ft.initialStartSpeed * (1f + (UpgradeManager._instance.flamethrowerRangeUpgradeLevel * UpgradeManager._instance.flamethrowerRangeUpgrade));
+        }
+
         towers.Add(t);
 
         GameManager._instance.Spend(Mathf.FloorToInt(towerPrefabs[selectedTowerType].cost * Mathf.Pow(1.5f, towersBought[selectedTowerType])));
@@ -125,11 +135,26 @@ public class TowerManager : MonoBehaviour
 
     public void UpdateTowersAnimatorSpeed()
     {
-        foreach(Tower tower in towers)
+        foreach (Tower tower in towers)
         {
-            if(tower.animator != null)
+            if (tower.animator != null)
             {
                 tower.animator.speed = 1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade);
+            }
+        }
+    }
+
+    public void UpdateFlamethrowerRange()
+    {
+        foreach (Tower tower in towers)
+        {
+            if (tower.GetType().Name == "FlameThrower")
+            {
+                FlameThrower ft = tower.GetComponent<FlameThrower>();
+                ft.flameCollider.size = new Vector2(ft.initialSizeX * (1f + (UpgradeManager._instance.flamethrowerRangeUpgradeLevel * UpgradeManager._instance.flamethrowerRangeUpgrade)), ft.flameCollider.size.y);
+                ft.flameCollider.offset = new Vector2(ft.initialOffsetX * (1f + (UpgradeManager._instance.flamethrowerRangeUpgradeLevel * UpgradeManager._instance.flamethrowerRangeUpgrade * 0.75f)), ft.flameCollider.offset.y); // 0.75f otherwise the collider moves away from the flamethrower sprite
+                var fpsm = ft.flameParticleSystem.main;
+                fpsm.startSpeedMultiplier = ft.initialStartSpeed * (1f + (UpgradeManager._instance.flamethrowerRangeUpgradeLevel * UpgradeManager._instance.flamethrowerRangeUpgrade));
             }
         }
     }

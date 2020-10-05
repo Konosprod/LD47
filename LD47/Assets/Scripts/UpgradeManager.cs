@@ -118,7 +118,7 @@ public class UpgradeManager : MonoBehaviour
 
     public void BuyGatlingCriticalUpgrade()
     {
-        if(GameManager._instance.CanAfford(Mathf.FloorToInt(Mathf.Pow(2, gatlingCriticalUpgradeLevel) * gatlingCriticalUpgradeCost)))
+        if (GameManager._instance.CanAfford(Mathf.FloorToInt(Mathf.Pow(2, gatlingCriticalUpgradeLevel) * gatlingCriticalUpgradeCost)))
         {
             GameManager._instance.Spend(Mathf.FloorToInt(Mathf.Pow(2, gatlingCriticalUpgradeLevel) * gatlingCriticalUpgradeCost));
             gatlingCriticalUpgradeLevel++;
@@ -128,7 +128,7 @@ public class UpgradeManager : MonoBehaviour
 
     public void BuyMortarMultishotUpgrade()
     {
-        if(GameManager._instance.CanAfford(Mathf.FloorToInt(Mathf.Pow(2, mortarMultishotUpgradeLevel) * mortarMultishotUpgradeCost)))
+        if (GameManager._instance.CanAfford(Mathf.FloorToInt(Mathf.Pow(2, mortarMultishotUpgradeLevel) * mortarMultishotUpgradeCost)))
         {
             GameManager._instance.Spend(Mathf.FloorToInt(Mathf.Pow(2, mortarMultishotUpgradeLevel) * mortarMultishotUpgradeCost));
             mortarMultishotUpgradeLevel++;
@@ -138,17 +138,19 @@ public class UpgradeManager : MonoBehaviour
 
     public void BuyFlamethrowerRangeUpgrade()
     {
-        if(GameManager._instance.CanAfford(Mathf.FloorToInt(Mathf.Pow(2, flamethrowerRangeUpgradeLevel) * flamethrowerRangeUpgradeCost)))
+        if (GameManager._instance.CanAfford(Mathf.FloorToInt(Mathf.Pow(2, flamethrowerRangeUpgradeLevel) * flamethrowerRangeUpgradeCost)))
         {
             GameManager._instance.Spend(Mathf.FloorToInt(Mathf.Pow(2, flamethrowerRangeUpgradeLevel) * flamethrowerRangeUpgradeCost));
             flamethrowerRangeUpgradeLevel++;
             UpdateFlamethrowerRangeUpgradeButtonText();
+
+            TowerManager._instance.UpdateFlamethrowerRange();
         }
     }
 
     public void BuyBarbedWireWeakeningUpgrade()
     {
-        if(GameManager._instance.CanAfford(Mathf.FloorToInt(Mathf.Pow(2, barbedWireWeakeningUpgradeLevel) * barbedWireWeakeningUpgradeCost)))
+        if (GameManager._instance.CanAfford(Mathf.FloorToInt(Mathf.Pow(2, barbedWireWeakeningUpgradeLevel) * barbedWireWeakeningUpgradeCost)))
         {
             GameManager._instance.Spend(Mathf.FloorToInt(Mathf.Pow(2, barbedWireWeakeningUpgradeLevel) * barbedWireWeakeningUpgradeCost));
             barbedWireWeakeningUpgradeLevel++;
