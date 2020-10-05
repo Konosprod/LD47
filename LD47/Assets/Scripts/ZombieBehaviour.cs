@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
-using UnityEditor.Animations;
+using UnityEngine.Animations;
 
 public class ZombieBehaviour : MonoBehaviour
 {
@@ -10,7 +10,7 @@ public class ZombieBehaviour : MonoBehaviour
     public bool hasSpriteVariation = false;
 
     public Sprite[] sprites = new Sprite[0];
-    public AnimatorController[] animatorControllers = new AnimatorController[0];
+    public RuntimeAnimatorController[] animatorControllers = new RuntimeAnimatorController[0];
 
     // Big boy has a specific animation
     public bool isBigBoy = false;
