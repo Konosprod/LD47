@@ -3881,8 +3881,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "You are a group of survivors stuck in a time loop. You have to survivre
-    one more night, again. Maybe this time will be the last... \n\nBuild your defenses
+  m_text: "You are a group of survivors stuck in a time loop. You have to survive
+    one more night,  again. Maybe this time will be the last... \n\nBuild your defenses
     with your weapons wether it be flamethrowers or gatling guns. Even if the time
     resets, you lose nothing of your knowledge or your money. Use it to upgrade your
     gear."
