@@ -1842,7 +1842,7 @@ MonoBehaviour:
   flamethrowerRangeUpgradeLevel: 0
   flamethrowerRangeUpgrade: 0.2
   barbedWireWeakeningUpgradeLevel: 0
-  barbedWireWeakeningUpgrade: 0.2
+  barbedWireWeakeningUpgrade: 0.15
 --- !u!1 &804425806
 GameObject:
   m_ObjectHideFlags: 0
