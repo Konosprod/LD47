@@ -14,7 +14,7 @@ public class Gatling : Tower
         if (rayHit.collider != null)
         {
             // Deal damage to the monster
-            rayHit.collider.gameObject.GetComponent<Monster>().TakeDamage(damage);
+            rayHit.collider.gameObject.GetComponent<Monster>().TakeDamage(damage * (1 + (UpgradeManager._instance.damageUpgradeLevel * UpgradeManager._instance.damageUpgrade)));
         }
 
         // Visual effects
