@@ -144,21 +144,21 @@ public class TowerManager : MonoBehaviour
 
     private void SetGatlingButtonText()
     {
-        gatlingButtonText.text = $"Gatling gun\nCost : {Mathf.FloorToInt(towerPrefabs[0].cost * Mathf.Pow(1.5f, towersBought[0]))} \nDamage : {towerPrefabs[0].damage * (1 + (UpgradeManager._instance.damageUpgradeLevel * UpgradeManager._instance.damageUpgrade))} \nFire rate : {(1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade)) / towerPrefabs[0].fireDelay}/s";
+        gatlingButtonText.text = $"Gatling gun\n\nCost : {Mathf.FloorToInt(towerPrefabs[0].cost * Mathf.Pow(1.5f, towersBought[0]))} \nDamage : {towerPrefabs[0].damage * (1 + (UpgradeManager._instance.damageUpgradeLevel * UpgradeManager._instance.damageUpgrade))} \nFire rate : {(1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade)) / towerPrefabs[0].fireDelay}/s";
     }
 
     private void SetMortarButtonText()
     {
-        mortarButtonText.text = $"Mortar\nCost : {Mathf.FloorToInt(towerPrefabs[1].cost * Mathf.Pow(1.5f, towersBought[1]))} \nDamage : {towerPrefabs[1].damage * (1 + (UpgradeManager._instance.damageUpgradeLevel * UpgradeManager._instance.damageUpgrade))} \nFire rate : {(1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade)) / towerPrefabs[1].fireDelay}/s";
+        mortarButtonText.text = $"Mortar\n\nCost : {Mathf.FloorToInt(towerPrefabs[1].cost * Mathf.Pow(1.5f, towersBought[1]))} \nDamage : {towerPrefabs[1].damage * (1 + (UpgradeManager._instance.damageUpgradeLevel * UpgradeManager._instance.damageUpgrade))} \nFire rate : {(1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade)) / towerPrefabs[1].fireDelay}/s";
     }
 
     private void SetFlamethrowerButtonText()
     {
-        flamethrowerButtonText.text = $"Flamethrower\nCost : {Mathf.FloorToInt(towerPrefabs[2].cost * Mathf.Pow(1.5f, towersBought[2]))} \nDPS : {towerPrefabs[2].damage * (1 + (UpgradeManager._instance.damageUpgradeLevel * UpgradeManager._instance.damageUpgrade)) * (1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade))}/s";
+        flamethrowerButtonText.text = $"Flamethrower\n\nCost : {Mathf.FloorToInt(towerPrefabs[2].cost * Mathf.Pow(1.5f, towersBought[2]))} \nDPS : {towerPrefabs[2].damage * (1 + (UpgradeManager._instance.damageUpgradeLevel * UpgradeManager._instance.damageUpgrade)) * (1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade))}/s";
     }
 
     private void SetBarbedWireButtonText()
     {
-        barbedWireButtonText.text = $"Barbed wire\nCost : {Mathf.FloorToInt(towerPrefabs[3].cost * Mathf.Pow(1.5f, towersBought[3]))} \nDPS : {towerPrefabs[3].damage * (1 + (UpgradeManager._instance.damageUpgradeLevel * UpgradeManager._instance.damageUpgrade)) * (1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade))}/s\nSlows ennemies by 60%";
+        barbedWireButtonText.text = $"Barbed wire\n\nCost : {Mathf.FloorToInt(towerPrefabs[3].cost * Mathf.Pow(1.5f, towersBought[3]))} \nDPS : {towerPrefabs[3].damage * (1 + (UpgradeManager._instance.damageUpgradeLevel * UpgradeManager._instance.damageUpgrade)) * (1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade))}/s\nSlows ennemies by 60%";
     }
 }
