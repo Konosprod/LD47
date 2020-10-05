@@ -26,18 +26,18 @@ public class SpawnManager : MonoBehaviour
     private void BuildWave()
     {
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(0f, new Wave.Spawn(5, 0)));
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(0.5f, new Wave.Spawn(10, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(0.5f, new Wave.Spawn(2, 1)));
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(1f, new Wave.Spawn(10, 0)));
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(1f, new Wave.Spawn(1, 2)));
 
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(2f, new Wave.Spawn(25, 1)));
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(3f, new Wave.Spawn(25, 1)));
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(3f, new Wave.Spawn(40, 0)));
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(4f, new Wave.Spawn(4, 2)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(4f, new Wave.Spawn(10, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(5f, new Wave.Spawn(15, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(5f, new Wave.Spawn(20, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(6f, new Wave.Spawn(3, 2)));
 
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(6f, new Wave.Spawn(30, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(7f, new Wave.Spawn(30, 0)));
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(7f, new Wave.Spawn(30, 1)));
-        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(8f, new Wave.Spawn(30, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(10f, new Wave.Spawn(3, 2)));
 
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(10.5f, new Wave.Spawn(30, 1)));
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(10.5f, new Wave.Spawn(30, 0)));
@@ -72,9 +72,9 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] monsterPrefabs = new GameObject[3];
     /* Monster balance
      * ID |   Sprite    | MaxHP | Speed | Gold reward | Note
-     * 0    Zombie-girl   100       3        10 
-     * 1    Fast-girl      25       8        5
-     * 2    Big-boy       1500      2.2      100        Speed is special due to animation
+     * 0    Zombie-girl   100       2        10 
+     * 1    Fast-girl      25       5        5
+     * 2    Big-boy       1500      1.5      100        Speed is special due to animation
      */
 
     private float currentTimer = 0f;

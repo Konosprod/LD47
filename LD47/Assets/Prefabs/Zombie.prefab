@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 100
-  speed: 3
+  speed: 2
   goldReward: 10
   isSlowed: 0
 --- !u!95 &-1291629113650506541
