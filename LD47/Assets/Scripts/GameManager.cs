@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public AudioClip loop;
     public AudioClip rewind;
 
-    private int totalGold = 50;
+    private int totalGold = 100;
     private int currentGold;
 
     private float initialTimer = 60f;

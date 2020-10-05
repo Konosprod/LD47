@@ -20,6 +20,7 @@ public class TowerManager : MonoBehaviour
     public Tower[] towerPrefabs = new Tower[5];
     public Transform towersParent;
     public GameObject tooPoor;
+    public GameObject okRich;
 
     [Header("UI")]
     public Text gatlingButtonText;  // towerPrefabs[0]
@@ -71,9 +72,11 @@ public class TowerManager : MonoBehaviour
 
             // Move the preview to the correct position
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            previewTower.transform.position = new Vector3(mousePos.x, previewTower.transform.position.y, -1f);
+            previewTower.transform.position = new Vector3(mousePos.x, previewTower.transform.position.y, -2f);
             tooPoor.SetActive(!GameManager._instance.CanAfford(Mathf.FloorToInt(towerPrefabs[selectedTowerType].cost * Mathf.Pow(1.5f, towersBought[selectedTowerType]))));
-            tooPoor.transform.position = new Vector3(mousePos.x, previewTower.transform.position.y, -2f);
+            tooPoor.transform.position = new Vector3(mousePos.x, previewTower.transform.position.y, -3f);
+            okRich.SetActive(GameManager._instance.CanAfford(Mathf.FloorToInt(towerPrefabs[selectedTowerType].cost * Mathf.Pow(1.5f, towersBought[selectedTowerType]))));
+            okRich.transform.position = new Vector3(mousePos.x, previewTower.transform.position.y, -3f);
 
 
             // Right-click with selected tower to remove the selection
