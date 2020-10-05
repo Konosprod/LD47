@@ -1098,7 +1098,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 804166452}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: BuyFlamethrowerRangeUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1444,7 +1444,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 804166452}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: BuyBarbedWireWeakeningUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3394,7 +3394,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 804166452}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: BuyGatlingCriticalUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4588,7 +4588,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 804166452}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: BuyMortarMultishotUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
