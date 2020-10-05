@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public Text goldText;
     public Text timerText;
     public Text loopText;
+    public Kino.AnalogGlitch glitchScript;
 
     [Header("Music")]
     public AudioClip intro;
@@ -67,6 +68,7 @@ public class GameManager : MonoBehaviour
 
     public void LoseLoop()
     {
+        StartCoroutine(glitchScreen(.2f));
         spawnManager.Reset();
 
         // Reset
@@ -76,6 +78,19 @@ public class GameManager : MonoBehaviour
 
         loopNumber++;
         UpdateLoopText();
+    }
+
+    public IEnumerator glitchScreen(float time)
+    {
+        glitchScript.enabled = true;
+
+        float t = 0;
+        for (t = 0;  t < time; t += Time.deltaTime)
+        {
+            yield return null;
+        }
+
+        glitchScript.enabled = false;
     }
 
 

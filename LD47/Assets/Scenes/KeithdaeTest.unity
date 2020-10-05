@@ -2521,6 +2521,7 @@ MonoBehaviour:
   goldText: {fileID: 1850075444}
   timerText: {fileID: 1168734341}
   loopText: {fileID: 681777309}
+  glitchScript: {fileID: 1026140632}
   intro: {fileID: 8300000, guid: dc529a3933ea0fe4f9c23171c3e035ac, type: 3}
   loop: {fileID: 8300000, guid: 1865c09814294cb4fa6b2c1d08ab630c, type: 3}
   waveInProgress: 1
@@ -3146,6 +3147,7 @@ GameObject:
   - component: {fileID: 1026140630}
   - component: {fileID: 1026140629}
   - component: {fileID: 1026140628}
+  - component: {fileID: 1026140632}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3238,6 +3240,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1026140632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026140627}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870b9a8f0f82f4f56800cc427bcd1025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scanLineJitter: 1
+  _verticalJump: 0.148
+  _horizontalShake: 0.169
+  _colorDrift: 0.111
+  _shader: {fileID: 4800000, guid: da33272284ea24f208f36998880990be, type: 3}
 --- !u!1 &1104400086
 GameObject:
   m_ObjectHideFlags: 0
