@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public Text timerText;
     public Text loopText;
     public Kino.AnalogGlitch glitchScript;
+    public GameObject panelWin;
 
     [Header("Music/Sfx")]
     public AudioClip intro;
@@ -65,6 +66,7 @@ public class GameManager : MonoBehaviour
                 UpdateTimerText();
                 AudioManager.instance.PlayEndGame(endGame);
                 TowerManager._instance.StopAllTowers();
+                panelWin.SetActive(true);
                 //Debug.Log("GG WELL PLAYED");
             }
             else
@@ -72,6 +74,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Restart()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("KeithdaeTest");
+    }
+
+    public void Quit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 
     public void LoseLoop()
     {
