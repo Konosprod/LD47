@@ -83,6 +83,7 @@ public class TowerManager : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 RemoveSelectedTower();
+                okRich.SetActive(false);
             }
         }
 
