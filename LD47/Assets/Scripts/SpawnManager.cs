@@ -47,6 +47,35 @@ public class SpawnManager : MonoBehaviour
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(14.5f, new Wave.Spawn(50, 0)));
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(15f, new Wave.Spawn(75, 1)));
         wave.spawnList.Add(new Tuple<float, Wave.Spawn>(15f, new Wave.Spawn(10, 2)));
+
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(18f, new Wave.Spawn(50, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(19f, new Wave.Spawn(100, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(20f, new Wave.Spawn(50, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(21f, new Wave.Spawn(100, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(22f, new Wave.Spawn(50, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(23f, new Wave.Spawn(150, 0)));
+
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(25f, new Wave.Spawn(20, 2)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(26f, new Wave.Spawn(80, 1)));
+
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(31f, new Wave.Spawn(20, 2)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(31f, new Wave.Spawn(50, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(31f, new Wave.Spawn(100, 0)));
+
+
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(34f, new Wave.Spawn(60, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(35f, new Wave.Spawn(120, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(36f, new Wave.Spawn(60, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(37f, new Wave.Spawn(120, 0)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(38f, new Wave.Spawn(60, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(39f, new Wave.Spawn(175, 0)));
+
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(41f, new Wave.Spawn(30, 2)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(42f, new Wave.Spawn(100, 1)));
+
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(46f, new Wave.Spawn(50, 2)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(46f, new Wave.Spawn(150, 1)));
+        wave.spawnList.Add(new Tuple<float, Wave.Spawn>(46f, new Wave.Spawn(250, 0)));
     }
     private int waveIndex = 0;
 
@@ -120,6 +149,15 @@ public class SpawnManager : MonoBehaviour
             if(currentTimer > 15f)
             {
                 monster.maxHP += 50f * scaling;
+            }
+            if(currentTimer > 30f)
+            {
+                monster.maxHP += 50f * scaling;
+                monster.maxHP *= scaling;
+            }
+            if(currentTimer > 45f)
+            {
+                monster.maxHP += 500f * scaling;
             }
 
             ZombieBehaviour zombie = newMob.GetComponent<ZombieBehaviour>();
