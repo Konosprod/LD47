@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Kono.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 7f24fafb7ed49ff408135b4234f543d4
+  - enabled: 1
+    path: Assets/Scenes/KeithdaeTest.unity
+    guid: 013c9c6276fd00d408c3434f62ea392c
   m_configObjects: {}
