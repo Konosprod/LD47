@@ -6,30 +6,37 @@ using UnityEngine.UI;
 
 public class TowerManager : MonoBehaviour
 {
+    public static TowerManager _instance;
+    private void Awake()
+    {
+        if (_instance == null)
+            _instance = this;
+        else
+            Destroy(this);
+    }
+
+
     [Header("Tower prefabs")]
     public Tower[] towerPrefabs = new Tower[5];
     public Transform towersParent;
     public GameObject tooPoor;
 
     [Header("UI")]
-    public Text gatlingButtonText;  // towers[0]
-    public Text mortarButtonText;  // towers[1]
-    public Text flamethrowerButtonText;  // towers[2]
-    public Text barbedWireButtonText;  // towers[3]
+    public Text gatlingButtonText;  // towerPrefabs[0]
+    public Text mortarButtonText;  // towerPrefabs[1]
+    public Text flamethrowerButtonText;  // towerPrefabs[2]
+    public Text barbedWireButtonText;  // towerPrefabs[3]
 
     // Preview of the tower that you are trying to build
     private GameObject previewTower;
     private int selectedTowerType = -1;
 
-    private List<GameObject> towers = new List<GameObject>();
+    private List<Tower> towers = new List<Tower>();
 
     // Start is called before the first frame update
     void Start()
     {
-        SetGatlingButtonText();
-        SetMortarButtonText();
-        SetFlamethrowerButtonText();
-        SetBarbedWireButtonText();
+        UpdateTowersButtonText();
     }
 
 
@@ -72,7 +79,10 @@ public class TowerManager : MonoBehaviour
     {
         GameObject tower = Instantiate(towerPrefabs[selectedTowerType].gameObject, towersParent);
         tower.transform.position = new Vector3(previewTower.transform.position.x, previewTower.transform.position.y, 0f);
-        towers.Add(tower);
+        Tower t = tower.GetComponent<Tower>();
+        if(t.animator != null) 
+            t.animator.speed = 1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade);
+        towers.Add(t);
         GameManager._instance.Spend(towerPrefabs[selectedTowerType].cost);
     }
 
@@ -108,23 +118,42 @@ public class TowerManager : MonoBehaviour
         previewTower = preview;
     }
 
+    public void UpdateTowersAnimatorSpeed()
+    {
+        foreach(Tower tower in towers)
+        {
+            if(tower.animator != null)
+            {
+                tower.animator.speed = 1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade);
+            }
+        }
+    }
+
+    public void UpdateTowersButtonText()
+    {
+        SetGatlingButtonText();
+        SetMortarButtonText();
+        SetFlamethrowerButtonText();
+        SetBarbedWireButtonText();
+    }
+
     private void SetGatlingButtonText()
     {
-        gatlingButtonText.text = $"Gatling gun\nCost : {towerPrefabs[0].cost} \nDamage : {towerPrefabs[0].damage} \nFire rate : {(1 / towerPrefabs[0].fireDelay)}/s";
+        gatlingButtonText.text = $"Gatling gun\nCost : {towerPrefabs[0].cost} \nDamage : {towerPrefabs[0].damage} \nFire rate : {(1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade)) / towerPrefabs[0].fireDelay}/s";
     }
 
     private void SetMortarButtonText()
     {
-        mortarButtonText.text = $"Mortar\nCost : {towerPrefabs[1].cost} \nDamage : {towerPrefabs[1].damage} \nFire rate : {(1 / towerPrefabs[1].fireDelay)}/s";
+        mortarButtonText.text = $"Mortar\nCost : {towerPrefabs[1].cost} \nDamage : {towerPrefabs[1].damage} \nFire rate : {(1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade)) / towerPrefabs[1].fireDelay}/s";
     }
 
     private void SetFlamethrowerButtonText()
     {
-        flamethrowerButtonText.text = $"Flamethrower\nCost : {towerPrefabs[2].cost} \nDPS : {towerPrefabs[2].damage}/s";
+        flamethrowerButtonText.text = $"Flamethrower\nCost : {towerPrefabs[2].cost} \nDPS : {towerPrefabs[2].damage * (1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade))}/s";
     }
 
     private void SetBarbedWireButtonText()
     {
-        barbedWireButtonText.text = $"Barbed wire\nCost : {towerPrefabs[3].cost} \nDPS : {towerPrefabs[3].damage}/s\nSlows ennemies by 60%";
+        barbedWireButtonText.text = $"Barbed wire\nCost : {towerPrefabs[3].cost} \nDPS : {towerPrefabs[3].damage * (1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade))}/s\nSlows ennemies by 60%";
     }
 }

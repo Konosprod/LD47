@@ -118,6 +118,7 @@ MonoBehaviour:
   cost: 100
   damage: 40
   fireDelay: 0.5
+  animator: {fileID: 7928842112561029587}
   currentDelay: 0
   layerMask: 0
   explosionRadius: 0.8

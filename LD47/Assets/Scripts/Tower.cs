@@ -8,6 +8,8 @@ public abstract class Tower : MonoBehaviour
     public float damage;
     public float fireDelay;
 
+    public Animator animator;
+
     [HideInInspector]
     public float currentDelay;
 
@@ -29,7 +31,7 @@ public abstract class Tower : MonoBehaviour
         if (currentDelay <= 0f)
         {
             Fire();
-            currentDelay = fireDelay;
+            currentDelay = fireDelay / (1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade));
         }
     }
 

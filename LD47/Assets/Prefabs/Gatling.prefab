@@ -152,6 +152,7 @@ MonoBehaviour:
   cost: 50
   damage: 7
   fireDelay: 0.16
+  animator: {fileID: 1018817108}
   currentDelay: 0
   layerMask: 0
   gunshellParticleSystem: {fileID: 2417854374705582703}

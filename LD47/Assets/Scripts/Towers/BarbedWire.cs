@@ -11,7 +11,7 @@ public class BarbedWire : Tower
         for (int i = monstersAffected.Count - 1; i >= 0; i--)
         {
             if (monstersAffected[i] != null)
-                monstersAffected[i].TakeDamage(damage * Time.deltaTime);
+                monstersAffected[i].TakeDamage(damage * Time.deltaTime * (1 + (UpgradeManager._instance.fireRateUpgradeLevel * UpgradeManager._instance.fireRateUpgrade)));
             else
                 monstersAffected.RemoveAt(i);
         }
