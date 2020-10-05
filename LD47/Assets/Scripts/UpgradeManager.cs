@@ -32,6 +32,9 @@ public class UpgradeManager : MonoBehaviour
     public Button flamethrowerRangeUpgradeButton;
     public Button barbedWireWeakeningUpgradeButton;
 
+    [Header("Sound")]
+    public AudioClip build;
+
     // Tower damage
     [HideInInspector]
     public int damageUpgradeLevel = 0;
@@ -100,6 +103,7 @@ public class UpgradeManager : MonoBehaviour
             UpdateDamageUpgradeButtonText();
 
             TowerManager._instance.UpdateTowersButtonText();
+            AudioManager.instance.PlaySfx(build);
         }
     }
 
@@ -113,6 +117,7 @@ public class UpgradeManager : MonoBehaviour
 
             TowerManager._instance.UpdateTowersAnimatorSpeed();
             TowerManager._instance.UpdateTowersButtonText();
+            AudioManager.instance.PlaySfx(build);
         }
     }
 
@@ -123,6 +128,7 @@ public class UpgradeManager : MonoBehaviour
             GameManager._instance.Spend(Mathf.FloorToInt(Mathf.Pow(2, gatlingCriticalUpgradeLevel) * gatlingCriticalUpgradeCost));
             gatlingCriticalUpgradeLevel++;
             UpdateGatlingCriticalUpgradeButtonText();
+            AudioManager.instance.PlaySfx(build);
         }
     }
 
@@ -133,6 +139,7 @@ public class UpgradeManager : MonoBehaviour
             GameManager._instance.Spend(Mathf.FloorToInt(Mathf.Pow(2, mortarMultishotUpgradeLevel) * mortarMultishotUpgradeCost));
             mortarMultishotUpgradeLevel++;
             UpdateMortarMultishotUpgradeButtonText();
+            AudioManager.instance.PlaySfx(build);
         }
     }
 
@@ -145,6 +152,7 @@ public class UpgradeManager : MonoBehaviour
             UpdateFlamethrowerRangeUpgradeButtonText();
 
             TowerManager._instance.UpdateFlamethrowerRange();
+            AudioManager.instance.PlaySfx(build);
         }
     }
 
@@ -155,6 +163,8 @@ public class UpgradeManager : MonoBehaviour
             GameManager._instance.Spend(Mathf.FloorToInt(Mathf.Pow(2, barbedWireWeakeningUpgradeLevel) * barbedWireWeakeningUpgradeCost));
             barbedWireWeakeningUpgradeLevel++;
             UpdateBarbedWireWeakeningUpgradeButtonText();
+
+            AudioManager.instance.PlaySfx(build);
         }
     }
 

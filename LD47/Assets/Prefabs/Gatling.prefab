@@ -160,6 +160,7 @@ MonoBehaviour:
   muzzleflashParticleSystem: {fileID: 5022275648565204837}
   shotParticleSystem: {fileID: 4215214113371666678}
   criticalShotParticleSystem: {fileID: 6579431423300518493}
+  fire: {fileID: 8300000, guid: 83eef0ce764ade44a95fb2170d35b4b0, type: 3}
 --- !u!1 &2417854374705582698
 GameObject:
   m_ObjectHideFlags: 0

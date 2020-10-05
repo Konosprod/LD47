@@ -69,6 +69,12 @@ public class AudioManager : MonoBehaviour
         introSource.volume = 1.0f;
     }
 
+    public void PlayGatlingSound(AudioClip clip)
+    {
+        if(!sfxSource.isPlaying)
+            sfxSource.PlayOneShot(clip);
+    }
+
     public void PlayLevelMusic(AudioClip introduced, AudioClip loop)
     {
 

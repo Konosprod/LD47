@@ -16,9 +16,10 @@ public class GameManager : MonoBehaviour
     public Text loopText;
     public Kino.AnalogGlitch glitchScript;
 
-    [Header("Music")]
+    [Header("Music/Sfx")]
     public AudioClip intro;
     public AudioClip loop;
+    public AudioClip rewind;
 
     private int totalGold = 50;
     private int currentGold;
@@ -82,6 +83,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator glitchScreen(float time)
     {
+        AudioManager.instance.PlaySfx(rewind);
         glitchScript.enabled = true;
 
         float t = 0;

@@ -9,8 +9,11 @@ public class Gatling : Tower
     public ParticleSystem shotParticleSystem;
     public ParticleSystem criticalShotParticleSystem;
 
+    public AudioClip fire;
+
     public override void Fire()
     {
+        AudioManager.instance.PlayGatlingSound(fire);
         bool crit = false;
         RaycastHit2D rayHit = Physics2D.Raycast(transform.position, Vector2.right, Mathf.Infinity, layerMask);
         if (rayHit.collider != null)

@@ -27,6 +27,9 @@ public class TowerManager : MonoBehaviour
     public Text flamethrowerButtonText;  // towerPrefabs[2]
     public Text barbedWireButtonText;  // towerPrefabs[3]
 
+    [Header("Audio")]
+    public AudioClip build;
+
     // Preview of the tower that you are trying to build
     private GameObject previewTower;
     private int selectedTowerType = -1;
@@ -79,6 +82,7 @@ public class TowerManager : MonoBehaviour
 
     private void BuySelectedTower()
     {
+        AudioManager.instance.PlaySfx(build);
         GameObject tower = Instantiate(towerPrefabs[selectedTowerType].gameObject, towersParent);
         tower.transform.position = new Vector3(previewTower.transform.position.x, previewTower.transform.position.y, 0f);
         Tower t = tower.GetComponent<Tower>();

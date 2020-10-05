@@ -2524,6 +2524,7 @@ MonoBehaviour:
   glitchScript: {fileID: 1026140632}
   intro: {fileID: 8300000, guid: dc529a3933ea0fe4f9c23171c3e035ac, type: 3}
   loop: {fileID: 8300000, guid: 1865c09814294cb4fa6b2c1d08ab630c, type: 3}
+  rewind: {fileID: 8300000, guid: 94cf3a894c74f4548b5fa33b976e139b, type: 3}
   waveInProgress: 1
 --- !u!4 &804166450
 Transform:
