@@ -123,3 +123,4 @@ MonoBehaviour:
   layerMask: 0
   explosionRadius: 0.8
   mortarShellPrefab: {fileID: 6417928254604458947, guid: b9df5153267cd984da3e1bfa18441550, type: 3}
+  fire: {fileID: 8300000, guid: 826ad492e49bcab49aa135bc17017402, type: 3}

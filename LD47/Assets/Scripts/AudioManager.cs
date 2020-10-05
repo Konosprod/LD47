@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource introSource;
     public AudioSource loopSource;
-    public AudioSource sfxSource;
+    public List<AudioSource> sfxSources;
     public AudioMixerGroup bgmgroup;
     public AudioMixerGroup sfxgroup;
 
@@ -44,20 +44,28 @@ public class AudioManager : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
 
-        if (loopSource == null)
+        AudioMixer mixer = Resources.Load("Master") as AudioMixer;
+
+        bgmgroup = mixer.FindMatchingGroups("BGM")[0];
+        sfxgroup = mixer.FindMatchingGroups("SFX")[0];
+        loopSource = gameObject.AddComponent<AudioSource>();
+        introSource = gameObject.AddComponent<AudioSource>();
+        sfxSources = new List<AudioSource>();
+
+
+        //0 : Gatling
+        //1 : Mortar
+        //2 : Mortar Shell
+        //3 : UI
+        for (int i = 0; i < 4; i++)
         {
-            AudioMixer mixer = Resources.Load("Master") as AudioMixer;
-
-            bgmgroup = mixer.FindMatchingGroups("BGM")[0];
-            sfxgroup = mixer.FindMatchingGroups("SFX")[0];
-            loopSource = gameObject.AddComponent<AudioSource>();
-            introSource = gameObject.AddComponent<AudioSource>();
-            sfxSource = gameObject.AddComponent<AudioSource>();
-
-            introSource.outputAudioMixerGroup = bgmgroup;
-            loopSource.outputAudioMixerGroup = bgmgroup;
+            AudioSource sfxSource = gameObject.AddComponent<AudioSource>();
             sfxSource.outputAudioMixerGroup = sfxgroup;
+            sfxSources.Add(sfxSource);
         }
+
+        introSource.outputAudioMixerGroup = bgmgroup;
+        loopSource.outputAudioMixerGroup = bgmgroup;
     }
 
     // Update is called once per frame
@@ -75,9 +83,22 @@ public class AudioManager : MonoBehaviour
 
     public void PlayGatlingSound(AudioClip clip)
     {
-        if (!sfxSource.isPlaying)
-            sfxSource.PlayOneShot(clip, .8f);
+        if (!sfxSources[0].isPlaying)
+            sfxSources[0].PlayOneShot(clip, .8f);
     }
+
+    public void PlayMortar(AudioClip clip)
+    {
+        if (!sfxSources[1].isPlaying)
+            sfxSources[1].PlayOneShot(clip, .8f);
+    }
+
+    public void PlayExplosion(AudioClip clip)
+    {
+        if (!sfxSources[2].isPlaying)
+            sfxSources[2].PlayOneShot(clip, .8f);
+    }
+
 
     public void PlayLevelMusic(AudioClip introduced, AudioClip loop)
     {
@@ -93,19 +114,22 @@ public class AudioManager : MonoBehaviour
         loopSource.PlayScheduled(startTime + duration);
     }
 
-    public void PlaySfx(AudioClip sfxClip, bool stop=false)
+    public void PlaySfx(AudioClip sfxClip, int channel, bool stop=false)
     {
         if(stop)
         {
-            sfxSource.Stop();
+            for(int i = 0; i < sfxSources.Count; i++)
+            {
+                sfxSources[i].Stop();
+            }
         }
-        sfxSource.PlayOneShot(sfxClip);
+        sfxSources[channel].PlayOneShot(sfxClip);
     }
 
 
-    public void PlaySfx(AudioClip sfxClip, float volume)
+    public void PlaySfx(AudioClip sfxClip, int channel, float volume)
     {
-        sfxSource.PlayOneShot(sfxClip, volume);
+        sfxSources[channel].PlayOneShot(sfxClip, volume);
     }
 
     public void SetVolume()
@@ -122,6 +146,9 @@ public class AudioManager : MonoBehaviour
 
     public void SetSfxVolume(float volume)
     {
-        sfxSource.volume = volume;
+        for (int i = 0; i < sfxSources.Count; i++)
+        {
+            sfxSources[i].volume = volume;
+        }
     }
 }

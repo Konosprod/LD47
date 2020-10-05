@@ -5137,3 +5137,4 @@ MonoBehaviour:
   shellCollider: {fileID: 6417928254604458951}
   rigidbody2D: {fileID: 6417928254604458948}
   explosionParticleSystem: {fileID: 3215190726231259220}
+  fire: {fileID: 8300000, guid: 1b9f972c58b2e1546a0870408a0545f8, type: 3}

@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public AudioClip loop;
     public AudioClip rewind;
 
-    private int totalGold = 50;
+    private int totalGold = 9999;
     private int currentGold;
 
     private float initialTimer = 60f;
@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator glitchScreen(float time)
     {
-        AudioManager.instance.PlaySfx(rewind, true);
+        AudioManager.instance.PlaySfx(rewind, 3, true);
         glitchScript.enabled = true;
 
         float t = 0;

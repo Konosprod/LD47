@@ -15,8 +15,11 @@ public class MortarShell : MonoBehaviour
 
     public ParticleSystem explosionParticleSystem;
 
+    public AudioClip fire;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        AudioManager.instance.PlayExplosion(fire);
         Collider2D[] zombies = Physics2D.OverlapCircleAll(transform.position, explosionRadius, LayerMask.GetMask("Zombie"));
         // Deal the damage
         if (zombies.Length > 0)

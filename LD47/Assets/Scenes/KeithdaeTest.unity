@@ -2565,7 +2565,7 @@ MonoBehaviour:
   mortarButtonText: {fileID: 1192570103}
   flamethrowerButtonText: {fileID: 1485236244}
   barbedWireButtonText: {fileID: 1347958405}
-  build: {fileID: 8300000, guid: 5506d407ae6fbde448b204e09dc2f0db, type: 3}
+  build: {fileID: 8300000, guid: 08d9530883bc86b4aad13ecdec87b593, type: 3}
 --- !u!114 &804166452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2591,7 +2591,7 @@ MonoBehaviour:
   mortarMultishotUpgradeButton: {fileID: 1934953350}
   flamethrowerRangeUpgradeButton: {fileID: 434300624}
   barbedWireWeakeningUpgradeButton: {fileID: 654126606}
-  build: {fileID: 8300000, guid: 08d9530883bc86b4aad13ecdec87b593, type: 3}
+  build: {fileID: 8300000, guid: 5506d407ae6fbde448b204e09dc2f0db, type: 3}
   damageUpgradeLevel: 0
   damageUpgrade: 0.25
   fireRateUpgradeLevel: 0

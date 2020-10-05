@@ -6,8 +6,12 @@ public class Mortar : Tower
 {
     public float explosionRadius;
     public GameObject mortarShellPrefab;
+
+    public AudioClip fire;
+
     public override void Fire()
     {
+        AudioManager.instance.PlayMortar(fire);
         GameObject shell = Instantiate(mortarShellPrefab, transform);
         MortarShell ms = shell.GetComponent<MortarShell>();
         ms.damage = damage * (1 + (UpgradeManager._instance.damageUpgradeLevel * UpgradeManager._instance.damageUpgrade));

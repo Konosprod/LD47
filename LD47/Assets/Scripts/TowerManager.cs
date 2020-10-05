@@ -82,7 +82,7 @@ public class TowerManager : MonoBehaviour
 
     private void BuySelectedTower()
     {
-        AudioManager.instance.PlaySfx(build);
+        AudioManager.instance.PlaySfx(build, 3);
         GameObject tower = Instantiate(towerPrefabs[selectedTowerType].gameObject, towersParent);
         tower.transform.position = new Vector3(previewTower.transform.position.x, previewTower.transform.position.y, 0f);
         Tower t = tower.GetComponent<Tower>();
