@@ -10,6 +10,18 @@ public class FlameThrower : Tower
     public SpriteRenderer spriteRenderer;
 
     public ParticleSystem flameParticleSystem;
+    public BoxCollider2D flameCollider;
+
+    public float initialSizeX;
+    public float initialOffsetX;
+    public float initialStartSpeed;
+
+    private void Awake()
+    {
+        initialSizeX = flameCollider.size.x;
+        initialOffsetX = flameCollider.offset.x;
+        initialStartSpeed = flameParticleSystem.main.startSpeedMultiplier;
+    }
 
     private List<Monster> monstersAffected = new List<Monster>();
 

@@ -7,19 +7,31 @@ public class Gatling : Tower
     public ParticleSystem gunshellParticleSystem;
     public ParticleSystem muzzleflashParticleSystem;
     public ParticleSystem shotParticleSystem;
+    public ParticleSystem criticalShotParticleSystem;
 
     public override void Fire()
     {
+        bool crit = false;
         RaycastHit2D rayHit = Physics2D.Raycast(transform.position, Vector2.right, Mathf.Infinity, layerMask);
         if (rayHit.collider != null)
         {
             // Deal damage to the monster
-            rayHit.collider.gameObject.GetComponent<Monster>().TakeDamage(damage * (1 + (UpgradeManager._instance.damageUpgradeLevel * UpgradeManager._instance.damageUpgrade)));
+            float damageTotal = damage * (1 + (UpgradeManager._instance.damageUpgradeLevel * UpgradeManager._instance.damageUpgrade));
+            if (UnityEngine.Random.Range(0f, 1f) < UpgradeManager._instance.gatlingCriticalUpgradeLevel * UpgradeManager._instance.gatlingCriticalUpgrade)
+            {
+                damageTotal *= 2f;
+                crit = true;
+            }
+
+            rayHit.collider.gameObject.GetComponent<Monster>().TakeDamage(damageTotal);
         }
 
         // Visual effects
         gunshellParticleSystem.Emit(1);
         muzzleflashParticleSystem.Emit(30);
-        shotParticleSystem.Emit(1);
+        if (!crit)
+            shotParticleSystem.Emit(1);
+        else
+            criticalShotParticleSystem.Emit(1);
     }
 }

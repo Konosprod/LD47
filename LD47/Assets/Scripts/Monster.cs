@@ -28,7 +28,7 @@ public class Monster : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        currentHP -= damage;
+        currentHP -= damage * (isSlowed > 0 ? 1f + (UpgradeManager._instance.barbedWireWeakeningUpgradeLevel * UpgradeManager._instance.barbedWireWeakeningUpgrade) : 1f);
         if (currentHP <= 0f)
         {
             //Debug.Log("RIP : " + gameObject.name);

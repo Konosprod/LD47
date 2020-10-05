@@ -100,12 +100,14 @@ MonoBehaviour:
   cost: 150
   damage: 100
   fireDelay: 0
+  animator: {fileID: 0}
   currentDelay: 0
   layerMask: 0
   flamethrowerOff: {fileID: 2800715737579632502, guid: f69adc79b836d9c4498f791563ff87a5, type: 3}
   flamethrowerOn: {fileID: -5748088590007121344, guid: f69adc79b836d9c4498f791563ff87a5, type: 3}
   spriteRenderer: {fileID: 1646410824856810385}
   flameParticleSystem: {fileID: 5164255657492288484}
+  flameCollider: {fileID: 1646410824856810476}
 --- !u!61 &1646410824856810476
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -300,7 +302,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3.5
+      scalar: 3.8
       minScalar: 5
       maxCurve:
         serializedVersion: 2
