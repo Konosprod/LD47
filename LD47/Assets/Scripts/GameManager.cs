@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
     public Text timerText;
     public Text loopText;
 
+    [Header("Music")]
+    public AudioClip intro;
+    public AudioClip loop;
+
     private int totalGold = 50;
     private int currentGold;
 
@@ -36,6 +40,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.instance.PlayLevelMusic(intro, loop);
         currentGold = totalGold;
         UpdateGoldText();
         currentTimer = initialTimer;

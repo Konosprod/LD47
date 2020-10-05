@@ -1209,6 +1209,8 @@ MonoBehaviour:
   goldText: {fileID: 1850075444}
   timerText: {fileID: 1168734341}
   loopText: {fileID: 681777309}
+  intro: {fileID: 8300000, guid: dc529a3933ea0fe4f9c23171c3e035ac, type: 3}
+  loop: {fileID: 8300000, guid: 1865c09814294cb4fa6b2c1d08ab630c, type: 3}
   waveInProgress: 1
 --- !u!4 &804166450
 Transform:
