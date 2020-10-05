@@ -71,8 +71,8 @@ public class AudioManager : MonoBehaviour
 
     public void PlayGatlingSound(AudioClip clip)
     {
-        if(!sfxSource.isPlaying)
-            sfxSource.PlayOneShot(clip);
+        if (!sfxSource.isPlaying)
+            sfxSource.PlayOneShot(clip, .8f);
     }
 
     public void PlayLevelMusic(AudioClip introduced, AudioClip loop)
@@ -89,10 +89,15 @@ public class AudioManager : MonoBehaviour
         loopSource.PlayScheduled(startTime + duration);
     }
 
-    public void PlaySfx(AudioClip sfxClip)
+    public void PlaySfx(AudioClip sfxClip, bool stop=false)
     {
+        if(stop)
+        {
+            sfxSource.Stop();
+        }
         sfxSource.PlayOneShot(sfxClip);
     }
+
 
     public void PlaySfx(AudioClip sfxClip, float volume)
     {

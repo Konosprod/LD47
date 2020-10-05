@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator glitchScreen(float time)
     {
-        AudioManager.instance.PlaySfx(rewind);
+        AudioManager.instance.PlaySfx(rewind, true);
         glitchScript.enabled = true;
 
         float t = 0;
