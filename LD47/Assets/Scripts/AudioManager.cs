@@ -105,6 +105,7 @@ public class AudioManager : MonoBehaviour
         for(int i = 0; i < 4; i++)
         {
             sfxSources[i].Stop();
+            introSource.Stop();
             introSource.clip = clip;
             loopSource.Stop();
             introSource.Play();

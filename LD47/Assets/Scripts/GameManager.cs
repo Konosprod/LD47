@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
             {
                 // Win
                 currentTimer = 0f;
+                UpdateTimerText();
                 AudioManager.instance.PlayEndGame(endGame);
                 //Debug.Log("GG WELL PLAYED");
             }
