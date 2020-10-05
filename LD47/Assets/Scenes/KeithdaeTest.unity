@@ -1419,9 +1419,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1.3}
-  m_SizeDelta: {x: 70, y: 70}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2.137329, y: 2.669983}
+  m_SizeDelta: {x: 70, y: 55.751465}
+  m_Pivot: {x: 0.46946675, y: 0.5}
 --- !u!114 &260615562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2747,7 +2747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &618977370
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4492,6 +4492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradeButton
       objectReference: {fileID: 0}
+    - target: {fileID: 4707411926249613025, guid: 09651bc0f3942fe46b506a867419a776, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6680219518565229524, guid: 09651bc0f3942fe46b506a867419a776, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -5588,8 +5592,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.4, y: 5.4}
-  m_SizeDelta: {x: 127.2, y: 102.04}
+  m_AnchoredPosition: {x: 4.6, y: 3.6}
+  m_SizeDelta: {x: 127.2, y: 59.00202}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1244012791
 MonoBehaviour:
@@ -8181,8 +8185,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.3, y: 2.3}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 62.514404}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1838828446
 MonoBehaviour:
