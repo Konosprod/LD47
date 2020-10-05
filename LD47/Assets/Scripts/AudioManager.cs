@@ -74,6 +74,7 @@ public class AudioManager : MonoBehaviour
 
         introSource.clip = introduced;
         loopSource.clip = loop;
+        loopSource.loop = true;
 
         double duration = (double)introduced.samples / introduced.frequency;
         double startTime = AudioSettings.dspTime + 0.2;
